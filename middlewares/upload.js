@@ -2,7 +2,12 @@ import multer from "multer";
 import path from "path";
 import { HttpError } from "../helpers/HttpError.js";
 
-const uploadDirectory = path.join(__dirname, "../public/avatars", "uploads");
+const uploadDirectory = path.join(
+  process.cwd(),
+  "public",
+  "avatars",
+  "uploads"
+);
 
 const multerConfig = {
   storage: multer.diskStorage({
