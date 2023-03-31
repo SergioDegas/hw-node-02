@@ -4,6 +4,8 @@ import { UserModel } from "../../schemas/user.js";
 import { HttpError } from "../../helpers/HttpError.js";
 import { ctrlWrapper } from "../../helpers/ctrlWrapper.js";
 
+;
+
 const register = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -24,6 +26,8 @@ const register = async (req, res, next) => {
       password: hashedPassword,
       avatarURL,
     });
+
+
 
     const { subscription } = newUser;
     res.status(201).json({ user: { email, subscription } });
